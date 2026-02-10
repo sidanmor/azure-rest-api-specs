@@ -1,14 +1,3 @@
-- tool: Swagger Avocado
-  paths:
-    - resource-manager/readme.md
-  rules:
-    - MULTIPLE_API_VERSION
-  reason: >
-    The monitor service has historically combined multiple API versions in the default tag
-    due to the nature of the service having many independent resource types (metrics, alerts, 
-    diagnostics, etc.) that version independently. This is a known pre-existing condition 
-    that requires service-level restructuring to resolve.
-
 - tool: TypeSpecRequirement
   path: resource-manager/Microsoft.Insights/PrivateLinkScopes/stable/2021-09-01/**/*.json
   reason: This is a reorganization of existing API versions, not introducing new API versions. These are old Swagger docs before Typespec requirements were implemented.
